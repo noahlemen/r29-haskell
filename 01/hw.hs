@@ -1,4 +1,5 @@
 {-
+  Exercise 01:
   `toDigits` should convert positive Integers
   to a list of digits. (For 0 or negative
   inputs, toDigits should return the empty
@@ -14,8 +15,8 @@
   toDigits (-17) == []
 -}
 
-toDigits    :: Integer -> [Integer]
-toDigitsRev :: Integer -> [Integer]
+toDigits      :: Integer -> [Integer]
+toDigitsRev   :: Integer -> [Integer]
 
 toDigits n
   | n > 0     = [read [x] :: Integer | x <- show n]
