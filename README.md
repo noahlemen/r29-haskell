@@ -7,3 +7,5 @@
 - [haskell platform](https://www.haskell.org/platform/)
 
 directories are organized by week corresponding with the upenn course
+
+most "homework" exercises will only be partially solved due to time-management constraints agreed upon by the group
