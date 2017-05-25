@@ -1,9 +1,13 @@
 module Golf where
 
--- skips :: [a] -> [[a]]
+skips :: [a] -> [[a]]
+skips a = map (\i -> everyNth a i) [i | (_, i) <- zip a [1..] ]
+
+everyNth :: [b] -> Integer -> [b]
+everyNth b n = map fst $ filter (\(_, i) -> i `mod` n == 0) $ [(el, i) | (el, i) <- zip b [1..] ]
 
 localMaxima :: [Integer] -> [Integer]
-localMaxima (n:m:o:xs)
-  | m > n && m > o = m:(localMaxima $ m:o:xs)
-  | otherwise = localMaxima $ m:o:xs
+localMaxima (x:y:z:xs)
+  | y > x && y > z = y:(localMaxima $ y:z:xs)
+  | otherwise = localMaxima $ y:z:xs
 localMaxima _ = []
